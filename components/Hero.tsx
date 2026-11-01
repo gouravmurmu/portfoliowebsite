@@ -4,24 +4,33 @@ import Socials from "./Socials";
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-cream">
-      <div className="mx-auto max-w-site px-4 pt-6 sm:px-6 md:pt-10">
-        <div className="flex flex-col justify-between gap-2 text-blue-deep sm:flex-row sm:items-start">
-          <p className="font-display text-xl font-extrabold uppercase leading-none tracking-wide sm:text-2xl">
-            Risk Analyst
-            <br />& Builder
+      <div className="mx-auto grid max-w-site items-end gap-6 px-4 pt-8 sm:px-6 md:grid-cols-[1.15fr_1fr] md:gap-4 md:pt-12">
+        <div className="pb-2 md:pb-14">
+          <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-blue-deep">{site.employerLine}</p>
+          <h1 className="mt-4 font-display font-black uppercase leading-poster tracking-tight text-blue">
+            <span className="block text-[26vw] md:text-[11.5vw] xl:text-[9.5rem]">Gourav</span>
+            <span className="block text-[26vw] text-blue-deep md:text-[11.5vw] xl:text-[9.5rem]">Murmu</span>
+          </h1>
+          <p className="mt-5 inline-block rounded-full bg-blue px-5 py-2 font-display text-lg font-extrabold uppercase tracking-wider text-paper md:text-xl">
+            {site.role}
           </p>
-          <p className="text-xs font-extrabold uppercase tracking-[0.18em] sm:text-right">
-            JPMorganChase · EMEA
-            <br />
-            Market & Credit Risk
-          </p>
+          <p className="mt-6 max-w-md text-base font-semibold text-ink md:text-lg">{site.pitch}</p>
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            <a
+              href="#work"
+              className="rounded-full bg-blue-deep px-6 py-3 font-extrabold uppercase tracking-wider text-paper hover:bg-ink"
+            >
+              See my work
+            </a>
+            <Socials />
+          </div>
         </div>
 
-        <div className="relative flex justify-center pt-[30vw] sm:pt-[min(16vw,220px)]">
-          <h1 className="relative z-10 select-none text-center font-display text-[27vw] font-black sm:text-[23vw] uppercase leading-poster tracking-tight text-blue xl:text-[17rem]">
-            Gourav
-            <span className="sr-only"> Murmu, {site.role}</span>
-          </h1>
+        <div className="relative mx-auto flex w-full max-w-[460px] justify-center self-end md:max-w-none">
+          <div
+            className="absolute bottom-0 left-1/2 aspect-square w-[88%] -translate-x-1/2 rounded-t-full bg-blue"
+            aria-hidden
+          />
           <picture>
             <source srcSet="/images/gourav-cutout.webp 1x, /images/gourav-cutout@2x.webp 2x" type="image/webp" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -31,18 +40,13 @@ export default function Hero() {
               width={520}
               height={665}
               fetchPriority="high"
-              className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-[44vw] max-w-[380px] -translate-x-1/2 sm:w-[28vw]"
+              className="relative block w-[86%] max-w-[440px] md:w-full"
+              style={{ marginInline: "auto" }}
             />
           </picture>
         </div>
       </div>
-
-      <div className="relative border-t-2 border-ink bg-cream-2">
-        <div className="mx-auto flex max-w-site flex-col gap-5 px-4 py-6 sm:px-6 md:flex-row md:items-center md:justify-between">
-          <p className="max-w-xl text-base font-semibold text-ink md:text-lg">{site.pitch}</p>
-          <Socials />
-        </div>
-      </div>
+      <div className="h-0.5 bg-ink" aria-hidden />
     </section>
   );
 }
