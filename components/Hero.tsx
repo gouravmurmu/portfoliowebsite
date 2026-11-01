@@ -4,8 +4,8 @@ import Socials from "./Socials";
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-cream">
-      <div className="mx-auto grid max-w-site items-end gap-6 px-4 pt-8 sm:px-6 md:grid-cols-[1.15fr_1fr] md:gap-4 md:pt-12">
-        <div className="pb-2 md:pb-14">
+      <div className="mx-auto grid max-w-site items-end gap-6 px-4 pt-8 sm:px-6 md:grid-cols-[1fr_1.15fr] md:gap-4 md:pt-12">
+        <div className="pb-2 md:order-2 md:pb-14 md:pl-6">
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-blue-deep">{site.employerLine}</p>
           <h1 className="mt-4 font-display font-black uppercase leading-poster tracking-tight text-blue">
             <span className="block text-[26vw] md:text-[11.5vw] xl:text-[9.5rem]">Gourav</span>
@@ -26,7 +26,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto flex w-full max-w-[460px] justify-center self-end md:max-w-none">
+        <div className="relative mx-auto flex w-full max-w-[460px] justify-center self-end md:order-1 md:max-w-none">
           <div
             className="absolute bottom-0 left-1/2 aspect-square w-[88%] -translate-x-1/2 rounded-t-full bg-blue"
             aria-hidden
